@@ -18,16 +18,23 @@ public class CreateAccount {
         name = userInput.nextLine();
         System.out.println("\nGenerate a pin of 6 digits : ");
         pin = userInput.nextLine();
-        int accNo = (int)(Math.random()*1_000_000);
-        System.out.println("Account created successfully...");
-        System.out.println("Name : "+name);
-        System.out.println("Account Number : "+accNo);
-        AccountDetails accInfo = new AccountDetails();
-        accInfo.setAccountNumber(accNo);
-        accInfo.setPin(pin);
-        accInfo.setName(name);
-        accInfo.depositMoney(0);
-        accountDetails.add(accInfo);
-        System.out.println("account Created successfully");
+        if(pin.length()==6){
+            int accNo = (int)(Math.random()*1_000_000);
+            System.out.println("Account created successfully...");
+            System.out.println("Name : "+name);
+            System.out.println("Account Number : "+accNo);
+            AccountDetails accInfo = new AccountDetails();
+            accInfo.setAccountNumber(accNo);
+            accInfo.setPin(pin);
+            accInfo.setName(name);
+            accInfo.depositMoney(0);
+            accountDetails.add(accInfo);
+            System.out.println("account Created successfully");
+        }
+        else{
+            System.out.println("Must be a 6 digit number");
+            getDetails(accountDetails);
+        }
+
     }
 }
