@@ -56,6 +56,7 @@ public class AccessAccount {
                         System.out.print("Enter New pin : ");
                         String pin = userInput.next();
                         if (pin.length() == 6) {
+                            accountDetails.setPin(pin);
                             System.out.println("Pin Updated successfully");
                         } else {
                             System.out.println("Invalid Pin");
